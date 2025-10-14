@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Job Fraud Detection System</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-shield-alt me-2"></i>
+                Job Fraud Detector AI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#detector">Detector</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold text-white mb-4">
+                            Advanced AI Fraud Detection
+                        </h1>
+                        <p class="lead text-white-50 mb-4">
+                            Protect yourself from fake job postings with our state-of-the-art machine learning system. 
+                            98.7% accuracy with enterprise-grade fraud detection.
+                        </p>
+                        <div class="stats-row mb-4">
+                            <div class="stat-item">
+                                <div class="stat-number">98.7%</div>
+                                <div class="stat-label">Accuracy</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">87.4%</div>
+                                <div class="stat-label">Precision</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">84.4%</div>
+                                <div class="stat-label">Recall</div>
+                            </div>
+                        </div>
+                        <a href="#detector" class="btn btn-light btn-lg">
+                            <i class="fas fa-search me-2"></i>
+                            Check Job Posting
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="floating-card">
+                            <i class="fas fa-robot fa-3x text-primary mb-3"></i>
+                            <h5>AI-Powered Analysis</h5>
+                            <p class="small">Advanced ensemble learning with network analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Detector Section -->
+    <section id="detector" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="detector-card">
+                        <div class="card-header text-center">
+                            <h2 class="mb-0">
+                                <i class="fas fa-shield-alt text-primary me-2"></i>
+                                Job Fraud Detection System
+                            </h2>
+                            <p class="text-muted mt-2">Enter job posting details to analyze fraud probability</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <form id="analyzeForm">
+                                <div class="row">
+                                    <!-- Basic Information -->
+                                    <div class="col-md-6">
+                                        <h5 class="section-title">Basic Information</h5>
+                                        
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">
+                                                <i class="fas fa-briefcase me-1"></i>Job Title *
+                                            </label>
+                                            <input type="text" class="form-control" id="title" 
+                                                   placeholder="e.g., Software Engineer, Marketing Manager"
+                                                   required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="location" class="form-label">
+                                                <i class="fas fa-map-marker-alt me-1"></i>Location *
+                                            </label>
+                                            <input type="text" class="form-control" id="location" 
+                                                   placeholder="e.g., New York, NY or Remote"
+                                                   required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="company" class="form-label">
+                                                <i class="fas fa-building me-1"></i>Company Name *
+                                            </label>
+                                            <input type="text" class="form-control" id="company" 
+                                                   placeholder="e.g., Microsoft, Google, ABC Corp"
+                                                   required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="department" class="form-label">
+                                                <i class="fas fa-users me-1"></i>Department
+                                            </label>
+                                            <select class="form-control" id="department">
+                                                <option value="">Select Department</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Marketing">Marketing</option>
+                                                <option value="Sales">Sales</option>
+                                                <option value="Customer Service">Customer Service</option>
+                                                <option value="Administrative">Administrative</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Finance">Finance</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="salaryRange" class="form-label">
+                                                <i class="fas fa-dollar-sign me-1"></i>Salary Range
+                                            </label>
+                                            <input type="text" class="form-control" id="salaryRange" 
+                                                   placeholder="e.g., $80,000 - $120,000">
+                                        </div>
+                                    </div>
+
+                                    <!-- Employment Details -->
+                                    <div class="col-md-6">
+                                        <h5 class="section-title">Employment Details</h5>
+                                        
+                                        <div class="mb-3">
+                                            <label for="employmentType" class="form-label">
+                                                <i class="fas fa-clock me-1"></i>Employment Type
+                                            </label>
+                                            <select class="form-control" id="employmentType">
+                                                <option value="">Select Type</option>
+                                                <option value="Full-time">Full-time</option>
+                                                <option value="Part-time">Part-time</option>
+                                                <option value="Contract">Contract</option>
+                                                <option value="Temporary">Temporary</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="requiredExperience" class="form-label">
+                                                <i class="fas fa-star me-1"></i>Required Experience
+                                            </label>
+                                            <select class="form-control" id="requiredExperience">
+                                                <option value="">Select Experience Level</option>
+                                                <option value="Entry level">Entry level</option>
+                                                <option value="Mid-Senior level">Mid-Senior level</option>
+                                                <option value="Director">Director</option>
+                                                <option value="Executive">Executive</option>
+                                                <option value="Not Applicable">Not Applicable</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="requiredEducation" class="form-label">
+                                                <i class="fas fa-graduation-cap me-1"></i>Required Education
+                                            </label>
+                                            <select class="form-control" id="requiredEducation">
+                                                <option value="">Select Education Level</option>
+                                                <option value="High School">High School</option>
+                                                <option value="Associate Degree">Associate Degree</option>
+                                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                                <option value="Master's Degree">Master's Degree</option>
+                                                <option value="Doctoral Degree">Doctoral Degree</option>
+                                                <option value="Unspecified">Unspecified</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="industry" class="form-label">
+                                                <i class="fas fa-industry me-1"></i>Industry
+                                            </label>
+                                            <select class="form-control" id="industry">
+                                                <option value="">Select Industry</option>
+                                                <option value="Technology">Technology</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Finance">Finance</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Manufacturing">Manufacturing</option>
+                                                <option value="Retail">Retail</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="jobFunction" class="form-label">
+                                                <i class="fas fa-cogs me-1"></i>Job Function
+                                            </label>
+                                            <select class="form-control" id="jobFunction">
+                                                <option value="">Select Function</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Marketing">Marketing</option>
+                                                <option value="Sales">Sales</option>
+                                                <option value="Customer Service">Customer Service</option>
+                                                <option value="Administrative">Administrative</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Text Fields -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5 class="section-title">Job Details</h5>
+                                    </div>
+                                    
+                                    <div class="col-md-12 mb-3">
+                                        <label for="description" class="form-label">
+                                            <i class="fas fa-file-alt me-1"></i>Job Description *
+                                        </label>
+                                        <textarea class="form-control" id="description" rows="4" 
+                                                  placeholder="Enter the complete job description..."
+                                                  required></textarea>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="requirements" class="form-label">
+                                            <i class="fas fa-list-check me-1"></i>Requirements
+                                        </label>
+                                        <textarea class="form-control" id="requirements" rows="3" 
+                                                  placeholder="Required skills, experience, education..."></textarea>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="benefits" class="form-label">
+                                            <i class="fas fa-gift me-1"></i>Benefits
+                                        </label>
+                                        <textarea class="form-control" id="benefits" rows="3" 
+                                                  placeholder="Health insurance, PTO, retirement plans..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Options -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5 class="section-title">Additional Options</h5>
+                                    </div>
+                                    
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-check-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="hasCompanyLogo">
+                                                <label class="form-check-label" for="hasCompanyLogo">
+                                                    <i class="fas fa-image me-1"></i>Company has logo/branding
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="hasQuestions">
+                                                <label class="form-check-label" for="hasQuestions">
+                                                    <i class="fas fa-question-circle me-1"></i>Application has screening questions
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="telecommuting">
+                                                <label class="form-check-label" for="telecommuting">
+                                                    <i class="fas fa-home me-1"></i>Telecommuting/Remote work available
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Demo Buttons -->
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <h6 class="text-muted mb-2">Quick Test Examples:</h6>
+                                        <button type="button" class="btn btn-outline-success me-2 demo-btn" data-example="legitimate">
+                                            <i class="fas fa-check me-1"></i>Load Legitimate Example
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger me-2 demo-btn" data-example="suspicious">
+                                            <i class="fas fa-exclamation-triangle me-1"></i>Load Suspicious Example
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary" id="resetBtn">
+                                            <i class="fas fa-undo me-1"></i>Reset Form
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg" id="analyzeBtn">
+                                        <i class="fas fa-search me-2"></i>
+                                        Analyze Job Posting
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-5 bg-light" style="display: none;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="results-card">
+                        <div class="card-header text-center">
+                            <h3 class="mb-0"><i class="fas fa-chart-line me-2"></i>Analysis Results</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Risk Level Display -->
+                            <div class="risk-display low text-center mb-4">
+                                <div class="risk-icon" id="riskIcon">✓</div>
+                                <div class="risk-percentage" id="riskPercentage">0%</div>
+                                <div class="risk-label" id="riskLabel">Analyzing...</div>
+                                <div class="mt-2" id="confidenceLevel">Confidence: Medium</div>
+                            </div>
+
+                            <!-- Performance Metrics -->
+                            <div class="row mb-4">
+                                <div class="col-md-3">
+                                    <div class="metric-card">
+                                        <div class="metric-value" id="accuracyValue">98.7%</div>
+                                        <div class="metric-label">Accuracy</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="metric-card">
+                                        <div class="metric-value" id="precisionValue">87.4%</div>
+                                        <div class="metric-label">Precision</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="metric-card">
+                                        <div class="metric-value" id="recallValue">84.4%</div>
+                                        <div class="metric-label">Recall</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="metric-card">
+                                        <div class="metric-value" id="f1Value">85.9%</div>
+                                        <div class="metric-label">F1-Score</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Feature Analysis -->
+                            <div class="feature-analysis">
+                                <h5><i class="fas fa-microscope me-2"></i>Feature Analysis</h5>
+                                <div id="featureAnalysis">
+                                    <p class="text-muted">Analysis results will appear here...</p>
+                                </div>
+                            </div>
+
+                            <!-- Recommendations -->
+                            <div class="recommendations mt-4">
+                                <h5><i class="fas fa-lightbulb me-2"></i>Recommendations</h5>
+                                <div id="recommendationsList">
+                                    <p class="text-muted">Recommendations will appear here...</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="text-center mt-4">
+                                <button class="btn btn-outline-primary me-2" onclick="window.scrollTo(0, 0)">
+                                    <i class="fas fa-arrow-up me-2"></i>Back to Top
+                                </button>
+                                <button class="btn btn-success" onclick="resetForm()">
+                                    <i class="fas fa-redo me-2"></i>Analyze Another
+                                </button>
+                            </div>
+                                    <i class="fas fa-download me-2"></i>Download Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">About Our AI System</h2>
+                    <p class="lead mb-4">
+                        Our fraud detection system uses advanced machine learning techniques including 
+                        ensemble learning, anomaly detection, and network analysis to identify fake job postings.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h5>Ensemble Learning</h5>
+                        <p>Combines XGBoost and Random Forest for robust predictions with 98.7% accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h5>Network Analysis</h5>
+                        <p>Detects fraud rings and template reuse patterns across multiple job postings.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5>Advanced Features</h5>
+                        <p>Analyzes 34 sophisticated features including text patterns and behavioral indicators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>Job Fraud Detector AI</h6>
+                    <p class="small mb-0">Advanced machine learning for job posting verification</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="small mb-0">© 2025 AI Fraud Detection System</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center py-4">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h5>Analyzing Job Posting...</h5>
+                    <p class="mb-0">Our AI is processing your data using advanced algorithms</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
