@@ -1,0 +1,2 @@
+bert_ktrain_predictor/*.h5 filter=lfs diff=lfs merge=lfs -text
+bert_ktrain_predictor/*.preproc filter=lfs diff=lfs merge=lfs -text
